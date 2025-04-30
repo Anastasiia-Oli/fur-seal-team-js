@@ -2,7 +2,7 @@ import 'izitoast/dist/css/iziToast.min.css';
 import iziToast from 'izitoast';
 
 import { postRequest } from './api';
-import { openModal } from './modal';
+import { openModal } from './modal.js';
 
 const form = document.getElementById('workTogetherForm');
 
