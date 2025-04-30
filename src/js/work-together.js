@@ -15,10 +15,29 @@ form.addEventListener('submit', async function (event) {
   const email = emailInput.value.trim();
   const message = messageInput.value.trim();
 
+  const emailRegex = /^[\w.-]+@[a-zA-Z_]+\.[a-zA-Z]{2,}$/;
+
+  emailInput.classList.remove('invalid');
+  messageInput.classList.remove('invalid');
+
   if (!email || !message) {
+    if (!email) emailInput.classList.add('invalid');
+    if (!message) messageInput.classList.add('invalid');
+
     iziToast.error({
       title: 'Error',
       message: 'Please fill in all fields.',
+      position: 'topRight',
+    });
+    return;
+  }
+
+  if (!emailRegex.test(email)) {
+    emailInput.classList.add('invalid');
+
+    iziToast.error({
+      title: 'Error',
+      message: 'Please enter a valid email address.',
       position: 'topRight',
     });
     return;

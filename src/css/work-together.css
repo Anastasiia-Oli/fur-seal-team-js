@@ -94,6 +94,10 @@
     flex-direction: column;
 }
 
+.invalid {
+    border: 1px solid #E74A3B;
+}
+
 .label-wt {
     font-weight: 400;
     font-size: 14px;
